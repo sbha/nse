@@ -1,6 +1,6 @@
 library(tidyverse)
 
-f <- function(d, g, v){
+group_by_mean <- function(d, g, v){
   group_var <- enquo(g)
   mean_var <- enquo(v)
   
@@ -15,4 +15,4 @@ f <- function(d, g, v){
 df <- rownames_to_column(mtcars) %>% as_tibble()
 
 
-f(df, cyl, hp)
+group_by_mean(df, cyl, hp)
